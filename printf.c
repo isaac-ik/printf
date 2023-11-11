@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	char *str;
-	int i = 0;
+	int i;
 
 	va_start(args, format);
 	while (*format != '\0')
@@ -28,12 +28,13 @@ int _printf(const char *format, ...)
 					}
 				case 's':
 					str = va_arg(args, char *);
+					i = 0;
+
 					while (str[i] != '\0')
 					{
 						_putchar(str[i]);
 						i++;
 					}
-					break;
 			}
 		}
 		else
