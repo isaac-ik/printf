@@ -29,9 +29,11 @@ int _printf(const char *format, ...)
 					count += _print_str(str);
 					break;
 				default:
-					_putchar('%');
-					_putchar(*format);
-					count++;
+					if (*format == '%')
+					{
+						putchar('%');
+						count++;
+					}
 			}
 		}
 		else
