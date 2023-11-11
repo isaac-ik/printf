@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 /**
   * _printf - Function name
   * @format: Pointer to string
@@ -8,12 +7,13 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count = 0;
+	int i, count = 0;
 	char *str;
-	int i;
 
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 	while (*format != '\0')
 	{
@@ -29,7 +29,6 @@ int _printf(const char *format, ...)
 				case 's':
 					str = va_arg(args, char *);
 					i = 0;
-
 					while (str[i] != '\0')
 					{
 						_putchar(str[i]);
