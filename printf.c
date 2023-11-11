@@ -32,7 +32,11 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					if (*format != '\0')
+					{
+						_putchar(*(format - 1));
+						count++;
 						_putchar(*format);
+					}
 					count++;
 			}
 		}
