@@ -33,6 +33,11 @@ int _printf(const char *format, ...)
 						count++;
 						i++;
 					}
+					break;
+				default:
+					_putchar('%');
+					_putchar(*format);
+					count++;
 			}
 		}
 		else
