@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 						count++;
 						i++;
 					}
+					break;
 				default:
 					return (-1);
 			}
