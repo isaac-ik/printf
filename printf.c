@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 					str = va_arg(args, char *);
 					if (str == NULL) 
 					{
-						_printf(null_char);
+						count += _printf(null_char);
 						break;
 					}
 					i = 0;
