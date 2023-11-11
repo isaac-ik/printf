@@ -34,7 +34,10 @@ int _printf(const char *format, ...)
 						_putchar('%');
 						count++;
 					}
-					return (-1);
+					else if (*format == ' ')
+					{
+						return (-1);
+					}
 			}
 		}
 		else
