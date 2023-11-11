@@ -22,10 +22,8 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					{
-						_putchar('(');
 						_putchar(va_arg(args, int));
 						count++;
-						_putchar(')');
 						break;
 					}
 				case 's':
