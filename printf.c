@@ -8,6 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int count = 0;
 	char *str;
 	int i;
 
@@ -23,6 +24,7 @@ int _printf(const char *format, ...)
 					{
 						_putchar('(');
 						_putchar(va_arg(args, int));
+						count++;
 						_putchar(')');
 						break;
 					}
@@ -33,14 +35,18 @@ int _printf(const char *format, ...)
 					while (str[i] != '\0')
 					{
 						_putchar(str[i]);
+						count++;
 						i++;
 					}
 			}
 		}
 		else
+		{
 			_putchar(*format);
+			count++;
+		}
 		format++;
 	}
 	va_end(args);
-	return (0);
+	return (count);
 }
