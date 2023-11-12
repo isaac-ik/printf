@@ -17,7 +17,7 @@ int print_int(va_list args)
 
 	/*process individual digit*/
 	count = lengthOfnum(number);
-	str = (char *)malloc(sizeof(char) * (count + 1));
+	str = malloc(sizeof(char) * (count + 1));
 	str = intTostr(number, str, count);
 	_print_s(str);
 	free(str);
@@ -32,20 +32,17 @@ int print_int(va_list args)
   */
 char *intTostr(int number, char *numberStr, int len)
 {
-	int i, digit;
-	/*char *pstr = numberStr;*/
+	int digit, i = len - 1;
 
-	for (i = len; i >= 0; i--)
+	/*Loop till number = zero or the string index is negative*/
+	while (number != 0 || len >= 0)
 	{
-		while (number != 0)
-		{
-			i--;
-			digit = (number % 10) + '0';
-			number = number / 10;
-			numberStr[i] = digit;
-		}
-		numberStr[len] = '\0';
+		digit = (number % 10) + '0';
+		number = number / 10;
+		numberStr[i] = digit;
+		i--;
 	}
+	numberStr[len] = '\0';
 	return (numberStr);
 }
 /**
@@ -56,6 +53,10 @@ char *intTostr(int number, char *numberStr, int len)
 int lengthOfnum(int n)
 {
 	int count = 0;
+
+	/* Account for size of negative values and zero */
+	if (n <= 0)
+		count = 1;
 
 	while (n != 0)
 	{
