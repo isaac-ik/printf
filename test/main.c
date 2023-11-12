@@ -24,6 +24,9 @@ int main(void)
 	printf("Negative:[%d]\n", -762534);
 
 	_printf("positive:[%d]\n", 762534);
-	_printf("Positive:[%d]\n", 762534);
+	printf("Positive:[%d]\n", 762534);
+
+	printf("positive:[%b]\n", 600);
+        _printf("Positive:[%b]\n", 600);
 	return (0);
 }

@@ -42,11 +42,12 @@ int parseConversion(const char *format, va_list args)
 		{'s', _print_str},
 		{'d', print_int},
 		{'i', print_int},
+		{'b', print_decTobin},
 		{0, NULL}
 	};
 
 	/*Loop through conv_array to find matching specificier */
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 6; i++)
 	{
 		/* if a matching specifier is found */
 		if (conv_array[i].spec == *format)
@@ -54,7 +55,7 @@ int parseConversion(const char *format, va_list args)
 			count += conv_array[i].funct(args); /* Call the associated function */
 			break;
 		}
-		if (i == 4)
+		if (i == 5)
 		{
 			if (*format == '%')
 			{

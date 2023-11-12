@@ -22,6 +22,11 @@ int lengthOfnum(int n);
 int _print_s(char *str);
 int formatParser(const char *format, va_list args);
 int parseConversion(const char *format, va_list args);
+int expo(int num, int power);
+
+/* BASE CONVERTERS */
+int print_decTobin(va_list args);
+int indextoStart(int number, int base);
 
 /**
  * struct print_map - a structure
