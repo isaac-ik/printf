@@ -3,10 +3,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-/* MACROS */
-#define INT int;
-#define STRING char*;
-
 
 int _printf(const char *format, ...);
 int _putchar(char c);
@@ -26,6 +22,11 @@ int lengthOfnum(int n);
 int _print_s(char *str);
 int formatParser(const char *format, va_list args);
 
+/**
+ * struct print_map - a structure
+ * @spec: converter specifier
+ * @funct: function pointer
+ */
 struct print_map
 {
 	/* the conversion specifier */

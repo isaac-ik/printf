@@ -1,13 +1,13 @@
 #include "main.h"
 /**
   * _print_str - Function name
-  * @str: Pointer to string
+  * @args: varaidic list
   * Return: Integar value
   */
 int _print_str(va_list args)
 {
-        int count = 0;
-        char *null_char = "(null)";
+	int count = 0;
+	char *null_char = "(null)";
 	int i;
 
 	/* Accessing next argument as a char */
@@ -26,18 +26,17 @@ int _print_str(va_list args)
 	}
 
 	/* while iterating through: print each string letter and keep count */
-        while (str[count] != '\0')
-        {
-                _putchar(str[count]);
-                count++;
-        }
-
-        return (count);
+	while (str[count] != '\0')
+	{
+		_putchar(str[count]);
+		count++;
+	}
+	return (count);
 }
 
 /**
   * print_char - Function name
-  * @n: nu
+  * @args: varadiac list
   * Return: Integar value
   */
 int print_char(va_list args)
@@ -46,5 +45,5 @@ int print_char(va_list args)
 
 	ch = va_arg(args, int);
 	_putchar(ch);
-        return (1);
+	return (1);
 }
