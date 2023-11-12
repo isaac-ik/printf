@@ -10,7 +10,8 @@
  */
 int print_decTobin(va_list args)
 {
-	int power, binNum, count, number;
+	int power, binNum, count;
+	unsigned int number;
 	int remainder, Tpower;
 	char *binStr;
 
@@ -43,7 +44,7 @@ int print_decTobin(va_list args)
  * @base: the base
  * Return: count
  */
-int indextoStart(int number, int base)
+int indextoStart(unsigned int number, int base)
 {
 	int count = 0;
 

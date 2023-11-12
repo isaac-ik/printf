@@ -26,7 +26,7 @@ int expo(int num, int power);
 
 /* BASE CONVERTERS */
 int print_decTobin(va_list args);
-int indextoStart(int number, int base);
+int indextoStart(unsigned int number, int base);
 
 /**
  * struct print_map - a structure
