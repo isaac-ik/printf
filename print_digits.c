@@ -64,20 +64,3 @@ int lengthOfnum(int n)
 	}
 	return (count);
 }
-/**
-  * _print_s - Function name
-  * @str: Pointer to string
-  * Return: Integar value
-  */
-int _print_s(char *str)
-{
-	int count = 0;
-
-	while (str[count] != '\0')
-	{
-		_putchar(str[count]);
-		count++;
-	}
-
-	return (count);
-}

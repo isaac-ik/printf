@@ -49,7 +49,7 @@ int parseConversion(const char *format, va_list args)
 	for (i = 0; i < 5; i++)
 	{
 		/* if a matching specifier is found */
-		if (conv_array[i].spec == *format && conv_array[i].funct != NULL)
+		if (conv_array[i].spec == *format)
 		{
 			count += conv_array[i].funct(args); /* Call the associated function */
 			break;
