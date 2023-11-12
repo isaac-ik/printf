@@ -21,6 +21,7 @@ char *intTostr(int number, char *numberStr, int len);
 int lengthOfnum(int n);
 int _print_s(char *str);
 int formatParser(const char *format, va_list args);
+int parseConversion(const char *format, va_list args);
 
 /**
  * struct print_map - a structure
@@ -33,6 +34,6 @@ struct print_map
 	char spec;
 	/* pointer t function that will print for this specific specifier */
 	int (*funct)(va_list);
-};
+} print_map_t;
 
 #endif
