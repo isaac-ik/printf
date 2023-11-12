@@ -10,13 +10,13 @@
  */
 int print_decTobin(va_list args)
 {
-	int power, binNum, count;
-	unsigned int number;
-	int remainder, Tpower;
+	int power, binNum, count, Tpower;
+	int remainder, number;
 	char *binStr;
 
 	binNum = 0;
-	number = va_arg(args, int);
+	number = (int)va_arg(args, unsigned int);
+	/* if there is no number */
 	power = indextoStart(number, 2) - 1;
 	Tpower = power;
 	count = 0;
@@ -30,6 +30,8 @@ int print_decTobin(va_list args)
 	}
 	/* allocate memory for it */
 	binStr = malloc(sizeof(char) * (count + 1));
+	if (binStr == NULL)
+		return (0);
 	/* convert to a string */
 	binStr = intTostr(binNum, binStr, count);
 	/*print the binary string */
