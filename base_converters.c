@@ -11,19 +11,18 @@
 int print_decTobin(va_list args)
 {
 	int power, binNum, count, number;
-	int remainder;
+	int remainder, Tpower;
 	char *binStr;
 
 	binNum = 0;
 	number = va_arg(args, int);
-	power = indextoStart(number, 2);
+	power = indextoStart(number, 2) - 1;
+	Tpower = power;
 	count = 0;
 	while (number != 0)
 	{
 		remainder = number %  2;
-
-		binNum += remainder * expo(10, power - 1);
-
+		binNum += remainder * expo(10, (Tpower - power));
 		number = number / 2;
 		power--;
 		count++;
