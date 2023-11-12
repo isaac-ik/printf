@@ -32,15 +32,24 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			/* Looping through the conv_array to find matching specificier */
-			for (i = 0; conv_array[i].spec != 0; i++)
+			for (i = 0; i < 5; i++)
 			{
 				/* if a matching specifier is found */
 				if (conv_array[i].spec == *format)
 				{
 					/* Call the associated function */
 					count += conv_array[i].funct(args);
+					break;
+				}
+				if (i == 4)
+				{
+					_putchar(*(format - 1));
+					count++;
+					_putchar(*format);
+					count++;
 				}
 			}
+
 		}
 		else
 		{

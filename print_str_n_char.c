@@ -7,7 +7,8 @@
 int _print_str(va_list args)
 {
         int count = 0;
-        char null_char[] = "(null)";
+        char *null_char = "(null)";
+	int i;
 
 	/* Accessing next argument as a char */
 	char *str = va_arg(args, char *);
@@ -15,7 +16,12 @@ int _print_str(va_list args)
 	/* if NULL or non-existing */
 	if (str == NULL)
 	{
-		count += _print_s(null_char);
+		i = 0;
+		while (null_char[i] != '\0')
+		{
+			_putchar(null_char[i]);
+			i++;
+		}
 		return (count);
 	}
 
