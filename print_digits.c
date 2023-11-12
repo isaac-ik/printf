@@ -17,7 +17,7 @@ int print_int(va_list args)
 
 	/*process individual digit*/
 	count = lengthOfnum(number);
-	str = malloc(sizeof(char) * (count + 1));
+	str = (char *)malloc(sizeof(char) * (count + 1));
 	str = intTostr(number, str, count);
 	_print_s(str);
 	free(str);
