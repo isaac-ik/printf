@@ -48,7 +48,8 @@ int parseConversion(const char *format, va_list args)
 	/*Loop through conv_array to find matching specificier */
 	for (i = 0; i < 5; i++)
 	{
-		if (conv_array[i].spec == *format) /* if a matching specifier is found */
+		/* if a matching specifier is found */
+		if (conv_array[i].spec == *format && conv_array[i].funct != NULL)
 		{
 			count += conv_array[i].funct(args); /* Call the associated function */
 			break;
