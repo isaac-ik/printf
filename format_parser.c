@@ -7,7 +7,7 @@
   */
 int formatParser(const char *format, va_list args)
 {
-	int i, count = 0;
+	int count = 0;
 
 	while (*format != '\0')
 	{
@@ -35,7 +35,7 @@ int formatParser(const char *format, va_list args)
 
 int parseConversion(const char *format, va_list args)
 {
-	int count = 0;
+	int i, count = 0;
 
 	print_map_t conv_array[] = {
 		{'c', print_char},

@@ -28,7 +28,7 @@ int parseConversion(const char *format, va_list args);
  * @spec: converter specifier
  * @funct: function pointer
  */
-struct print_map
+typedef struct print_map
 {
 	/* the conversion specifier */
 	char spec;
