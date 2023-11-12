@@ -42,7 +42,7 @@ char *intTostr(int number, char *numberStr, int len)
 		isNegative = 1;
 	}
 	/*Loop till number = zero or the string index is negative*/
-	while (number != 0 || (!isNegative && len >= 0))
+	while (number != 0 || (!isNegative && i >= 0))
 	{
 		digit = (number % 10) + '0';
 		number = number / 10;
