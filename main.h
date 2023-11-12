@@ -24,6 +24,7 @@ int print_char(va_list args);
 char *intTostr(int number, char *numberStr, int len);
 int lengthOfnum(int n);
 int _print_s(char *str);
+int formatParser(const char *format, va_list args);
 
 struct print_map
 {
@@ -32,4 +33,5 @@ struct print_map
 	/* pointer t function that will print for this specific specifier */
 	int (*funct)(va_list);
 };
+
 #endif

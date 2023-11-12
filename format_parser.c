@@ -1,0 +1,53 @@
+#include "main.h"
+struct print_map conv_array[] ={
+        {'c', print_char},
+        {'s', _print_str},
+        {'d', print_int},
+        {'i', print_int},
+        {0, NULL}
+};
+
+int formatParser(const char *format, va_list args)
+{
+	int i, count;
+
+	count = 0;
+
+	if (!format || (format[0] == '%' && !format[1]))
+                return (-1);
+        if (format[0] == '%' && format[1] == ' ' && !format[2])
+                return (-1);
+        while (*format != '\0')
+        {
+                if (*format == '%')
+                {
+                        format++;
+                        /* Looping through the conv_array to find matching specificier */
+                        for (i = 0; i < 5; i++)
+                        {
+                                /* if a matching specifier is found */
+                                if (conv_array[i].spec == *format)
+                                {
+                                        /* Call the associated function */
+                                        count += conv_array[i].funct(args);
+                                        break;
+                                }
+                                if (i == 4)
+                                {
+                                        _putchar(*(format - 1));
+                                        count++;
+                                        _putchar(*format);
+                                        count++;
+                                }
+                        }
+
+                }
+                else
+                {
+                        _putchar(*format);
+                        count++;
+                }
+                format++;
+        }
+	return (count);
+}
