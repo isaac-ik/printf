@@ -34,10 +34,18 @@ int formatParser(const char *format, va_list args)
                                 }
                                 if (i == 4)
                                 {
-                                        _putchar(*(format - 1));
-                                        count++;
-                                        _putchar(*format);
-                                        count++;
+					if (*format == '%')
+					{
+						_putchar(*format);
+						count++;
+					} 
+					else 
+					{
+						_putchar(*(format - 1));
+						count++;
+						_putchar(*format);
+                                        	count++;
+					}
                                 }
                         }
 
