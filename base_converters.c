@@ -11,15 +11,16 @@
 int print_decTobin(va_list args)
 {
 	int power, binNum, count, Tpower;
-	int remainder, number;
+	unsigned int number;
+	int remainder;
 	char *binStr;
 
 	binNum = 0;
-	number = (int)va_arg(args, unsigned int);
-	/* if there is no number */
+	number = (long)va_arg(args, unsigned int);
 	power = indextoStart(number, 2) - 1;
 	Tpower = power;
 	count = 0;
+	/* the conversion */
 	while (number != 0)
 	{
 		remainder = number %  2;
