@@ -22,6 +22,7 @@ int _print_str(va_list args)
 			_putchar(null_char[i]);
 			i++;
 		}
+		va_end(args);
 		return (count);
 	}
 
