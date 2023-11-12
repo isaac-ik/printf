@@ -17,5 +17,10 @@ int main(void)
 	len1 = _printf("Unknown:[%r]\n");
 	len2 = printf("Unknown:[%r]\n");
 	printf("Length:[%d, %d]\n", len1, len2);
+	_printf("my Length:[%d, %i]\n", len1, len2);
+	printf("orginal Length:[%d, %i]\n", len1, len2);
+	
+	_printf("Negative:[%d]\n", -762534);
+	printf("Negative:[%d]\n", -762534);
 	return (0);
 }
