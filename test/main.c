@@ -54,5 +54,9 @@ int main(void)
 	_printf("Unsigned:[%u]\n", ui);
 	printf("Unsigned:[%u]\n", ui);
 	printf("Length:[%d, %d]\n", len1, len2);
+
+	len1 = _printf("Address:[%p]\n", &ui);
+	len2 = printf("Address:[%p]\n", &ui);
+	printf("Length:[%d, %d]\n", len1, len2);
 	return (0);
 }

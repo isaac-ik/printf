@@ -52,7 +52,7 @@ int base_con16(int num, char t)
 		 * use the num as an index to its value in the symbols array,
 		 * and write it to standard output
 		 */
-		if (t == 'l' || (t == 'u' && num < 9))
+		if (t == 'l' || (t == 'u' && num <= 9))
 			s = symbols[num];
 		if (t == 'u' && num > 9)
 			s = symbols[num] - 32;
