@@ -36,8 +36,8 @@ int print_decTobin(va_list args)
 	/* convert to a string */
 	binStr = intTostr(binNum, binStr, count);
 	/*print the binary string */
-	/*_print_s(binStr);*/
-	return (_print_s(binStr) + 1);
+	_print_s(binStr);
+	return (count);
 }
 /**
  * indextoStart - a function
