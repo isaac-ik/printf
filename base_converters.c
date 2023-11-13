@@ -8,21 +8,20 @@
  */
 int print_bin(va_list args)
 {
-	unsigned int n, m, i, sum;
-	unsigned int bitRep[32];
+	unsigned int n, m, i, sum, bitRep[32];
 	int count;
 	/* Extract the unsigned integer argument from the va_list */
 	n = va_arg(args, unsigned int);
-	
 	/* Set bitSize to the most significant bit (2^31 for a 32-bit integer) */
 	m = 2147483648;
-
 	/**
-	 * For example, the binary representation of 5 is 00000000000000000000000000000101
-	 * When printing the binary representation, it's common to skip leading zeros
+	 * the binary representation of 5 is 00000000000000000000000000000101
+	 * When printing the binary representation,
+	 * it's common to skip leading zeros
 	 * to make the output more concise and readable
+	 * Task: Calculate the binary representation of the number
+	 * and store it in array a
 	 */
-	/* Calculate the binary representation of the number and store it in array a */
 	bitRep[0] = n / m;
 	for (i = 1; i < 32; i++)
 	{
@@ -49,7 +48,7 @@ int print_bin(va_list args)
 	return (count);
 }
 /**
- * decTobin - a function
+ * print_decTobin - a function
  * Contributors: Isaac and Chee
  * Description: convert a decimal to binary
  * @args: argument list
@@ -106,7 +105,7 @@ int indextoStart(unsigned int number, int base)
 	return (count);
 }
 /**
- * exp - a function
+ * expo - a function
  * Contributors: Isaac and Chee
  * Description: claculates the ppower of a num
  * @num: the dcimal number
@@ -118,9 +117,8 @@ int expo(int num, int power)
 	if (power < 0)
 		return (-1);
 	if (power == 0)
-	       return (1);
+		return (1);
 	if (power == 1)
 		return (num);
-	
 	return (num * expo(num, (power - 1)));
 }
