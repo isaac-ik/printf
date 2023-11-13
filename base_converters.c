@@ -16,7 +16,7 @@ int print_decTobin(va_list args)
 	char *binStr;
 
 	binNum = 0;
-	number = (long)va_arg(args, unsigned int);
+	number = va_arg(args, unsigned int);
 	power = indextoStart(number, 2) - 1;
 	Tpower = power;
 	count = 0;
@@ -36,8 +36,8 @@ int print_decTobin(va_list args)
 	/* convert to a string */
 	binStr = intTostr(binNum, binStr, count);
 	/*print the binary string */
-	_print_s(binStr);
-	return (count);
+	/*_print_s(binStr);*/
+	return (_print_s(binStr) + 1);
 }
 /**
  * indextoStart - a function

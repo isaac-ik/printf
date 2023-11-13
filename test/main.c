@@ -20,13 +20,26 @@ int main(void)
 	_printf("my Length:[%d, %i]\n", len1, len2);
 	printf("orginal Length:[%d, %i]\n", len1, len2);
 	
-	_printf("Negative:[%d]\n", -762534);
-	printf("Negative:[%d]\n", -762534);
+	_printf("Negative:[%d]\n", -762534888888);
+	printf("Negative:[%d]\n", -762534888888);
 
-	_printf("positive:[%d]\n", 762534);
-	printf("Positive:[%d]\n", 762534);
+	_printf("positive:[%d]\n", "76253");
+	printf("Positive:[%d]\n", "76253");
 
-	printf("positive:[%b]\n", 98);
-        _printf("Positive:[%b]\n", 98);
+	len1 = _printf("positive:[%d]\n", 76253);
+        len2 = printf("Positive:[%d]\n", 76253);
+	printf("Length:[%d, %d]\n", len1, len2);
+
+	len1 = _printf("positive:[%b]\n", 98);
+        len2 = printf("Positive:[%b]\n", 98);
+	printf("Length:[%d, %d]\n", len1, len2);
+
+	len1 = _printf("positive:[%b]\n");
+        len2 = printf("Positive:[%b]\n");
+	printf("Length:[%d, %d]\n", len1, len2);
+
+	len1 = _printf("positive:[%b]\n", -98);
+        len2 = printf("Positive:[%b]\n", -98);
+	printf("Length:[%d, %d]\n", len1, len2);
 	return (0);
 }
