@@ -6,6 +6,7 @@ int main(void)
 	/**int len;*/
 	int len2, len1;
 	char *surname = "Ez";
+	unsigned int ui = 76;
 	len1 = _printf("Let's try to printf a %simple sentenc% \n");
 	len2 = printf("Let's try to printf a %simple sentenc% \n");
 	/*_printf("Length:[%d, %i]\n", len2, len2);*/
@@ -20,14 +21,14 @@ int main(void)
 	_printf("my Length:[%d, %i]\n", len1, len2);
 	printf("orginal Length:[%d, %i]\n", len1, len2);
 	
-	_printf("Negative:[%d]\n", -762534888888);
-	printf("Negative:[%d]\n", -762534888888);
+	_printf("Negative:[%d]\n", 7);
+	printf("Negative:[%d]\n", 7);
 
 	_printf("positive:[%d]\n", "76253");
 	printf("Positive:[%d]\n", "76253");
 
-	len1 = _printf("positive:[%d]\n", 76253);
-        len2 = printf("Positive:[%d]\n", 76253);
+	len1 = _printf("positive:[%d]\n", 040);
+        len2 = printf("Positive:[%d]\n", 040);
 	printf("Length:[%d, %d]\n", len1, len2);
 
 	len1 = _printf("positive:[%b]\n", 98);
@@ -40,6 +41,14 @@ int main(void)
 
 	len1 = _printf("positive:[%b]\n", -98);
         len2 = printf("Positive:[%b]\n", -98);
+	printf("Length:[%d, %d]\n", len1, len2);
+	
+	len1 = _printf("Unsigned octal:[%o]\n", ui);
+	len2 = printf("Unsigned octal:[%o]\n", ui);
+	printf("Length:[%d, %d]\n", len1, len2);
+
+	len1 = _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+	len2 = printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	printf("Length:[%d, %d]\n", len1, len2);
 	return (0);
 }

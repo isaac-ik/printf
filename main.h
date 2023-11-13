@@ -3,6 +3,9 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+#define OCT 8
+#define UPPER 'u'
+#define LOWER 'l'
 
 int _printf(const char *format, ...);
 int _putchar(char c);
@@ -23,9 +26,14 @@ int _print_s(char *str);
 int formatParser(const char *format, va_list args);
 int parseConversion(const char *format, va_list args);
 int expo(int num, int power);
+int base_con(int num, int base);
+int base_con16(int num, char t);
 
 /* BASE CONVERTERS */
 int print_bin(va_list args);
+int print_oct(va_list args);
+int print_hex(va_list args);
+int print_HEX(va_list args);
 int indextoStart(unsigned int number, int base);
 
 /**

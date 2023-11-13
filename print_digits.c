@@ -14,7 +14,6 @@ int print_int(va_list args)
 
 	/* Accessing the next item as an int */
 	number = va_arg(args, int);
-	
 
 	/*process individual digit*/
 	count = lengthOfnum(number);

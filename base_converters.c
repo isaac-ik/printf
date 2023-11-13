@@ -48,39 +48,50 @@ int print_bin(va_list args)
 	return (count);
 }
 /**
- * indextoStart - a function
+ * print_oct - a function
  * Contributors: Isaac and Chee
- * Description: get the number of divisions to use later
- * @number: the dcimal number
- * @base: the base
+ * Description: convert a decimal to octal
+ * @args: argument list
  * Return: count
  */
-int indextoStart(unsigned int number, int base)
+int print_oct(va_list args)
 {
-	int count = 0;
+	int count;
+	unsigned int numb;
 
-	while (number != 0)
-	{
-		number  = number / base;
-		count++;
-	}
+	numb = va_arg(args, unsigned int);
+	count = base_con(numb, OCT);
 	return (count);
 }
 /**
- * expo - a function
+ * print_hex - a function
  * Contributors: Isaac and Chee
- * Description: claculates the ppower of a num
- * @num: the dcimal number
- * @power: the power
- * Return: result
+ * Description: convert a decimal to lowercase Hexadecimal
+ * @args: argument list
+ * Return: count
  */
-int expo(int num, int power)
+int print_hex(va_list args)
 {
-	if (power < 0)
-		return (-1);
-	if (power == 0)
-		return (1);
-	if (power == 1)
-		return (num);
-	return (num * expo(num, (power - 1)));
+	int count;
+	unsigned int numb;
+
+	numb = va_arg(args, unsigned int);
+	count = base_con16(numb, LOWER);
+	return (count);
+}
+/**
+ * print_HEX - a function
+ * Contributors: Isaac and Chee
+ * Description: convert a decimal to upper HEXADECIMAL
+ * @args: argument list
+ * Return: count
+ */
+int print_HEX(va_list args)
+{
+	int count;
+	unsigned int numb;
+
+	numb = va_arg(args, unsigned int);
+	count = base_con16(numb, UPPER);
+	return (count);
 }
