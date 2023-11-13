@@ -39,14 +39,14 @@ int parseConversion(const char *format, va_list args)
 
 	print_map_t conv_array[] = {
 		{'c', print_char}, {'s', _print_str},
-		{'d', print_int}, {'i', print_int},
+		{'d', print_int2}, {'i', print_int},
 		{'b', print_bin}, {'x', print_hex},
 		{'X', print_HEX}, {'o', print_oct},
-		{0, NULL}
+		{'u', print_unsignedInt}, {0, NULL}
 	};
 
 	/*Loop through conv_array to find matching specificier */
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		/* if a matching specifier is found */
 		if (conv_array[i].spec == *format)
@@ -54,7 +54,7 @@ int parseConversion(const char *format, va_list args)
 			count += conv_array[i].funct(args); /* Call the associated function */
 			break;
 		}
-		if (i == 8)
+		if (i == 9)
 		{
 			if (*format == '%')
 			{

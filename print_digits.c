@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
   * print_int - Function name
@@ -21,6 +20,36 @@ int print_int(va_list args)
 	str = intTostr(number, str, count);
 	_print_s(str);
 	free(str);
+	return (count);
+}
+/**
+  * print_int2 - Function name
+  * @args: Argument list
+  * Return: Integar value
+  */
+int print_int2(va_list args)
+{
+	int count = 0;/* Keep track of count */
+	int number;
+
+	/* Accessing the next item as an int */
+	number = va_arg(args, int);
+	count = base_con(number, DEC);
+	return (count);
+}
+/**
+  * print_unsignedInt - Function name
+  * @args: Argument list
+  * Return: Integar value
+  */
+int print_unsignedInt(va_list args)
+{
+	int count = 0;/* Keep track of count */
+	int number;
+
+	/* Accessing the next item as an int */
+	number = va_arg(args, unsigned int);
+	count = base_con(number, DEC);
 	return (count);
 }
 /**

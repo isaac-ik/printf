@@ -24,7 +24,7 @@ int main(void)
 	_printf("Negative:[%d]\n", 7);
 	printf("Negative:[%d]\n", 7);
 
-	_printf("positive:[%d]\n", "76253");
+	_printf("positive:[%d]\n", 76253);
 	printf("Positive:[%d]\n", "76253");
 
 	len1 = _printf("positive:[%d]\n", 040);
@@ -49,6 +49,10 @@ int main(void)
 
 	len1 = _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	len2 = printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+	printf("Length:[%d, %d]\n", len1, len2);
+
+	_printf("Unsigned:[%u]\n", ui);
+	printf("Unsigned:[%u]\n", ui);
 	printf("Length:[%d, %d]\n", len1, len2);
 	return (0);
 }
