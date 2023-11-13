@@ -1,6 +1,43 @@
 #include "main.h"
-#include <stdio.h>
-
+/**
+ * print_bin - a function
+ * Contributors: Isaac and Chee
+ * Description: convert a decimal to binary
+ * @args: argument list
+ * Return: count
+ */
+int print_bin(va_list args)
+{
+	unsigned int n, m, i, sum;
+	unsigned int bitRep[32];
+	int count;
+	/* Extract the unsigned integer argument from the va_list */
+	n = va_arg(args, unsigned int);
+	
+	/* Set bitSize to the most significant bit (2^31 for a 32-bit integer) */
+	m = 2147483648;
+	/* Calculate the binary representation of the number and store it in array a */
+	bitRep[0] = n / m;
+	for (i = 1; i < 32; i++)
+	{
+		m /= 2;
+		bitRep[i] = (n / m) % 2;
+	}
+	/* Print the binary representation, skipping leading zeros */
+	for (i = 0, sum = 0, count = 0; i < 32; i++)
+	{
+		sum += bitRep[i];
+		if (sum || i == 31)
+		{
+			char z = '0' + bitRep[i];
+			/* Write the character to standard output */
+			_putchar(z);
+			count++;
+		}
+	}
+	/* Return the number of characters written */
+	return (count);
+}
 /**
  * decTobin - a function
  * Contributors: Isaac and Chee

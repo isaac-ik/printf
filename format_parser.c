@@ -42,7 +42,7 @@ int parseConversion(const char *format, va_list args)
 		{'s', _print_str},
 		{'d', print_int},
 		{'i', print_int},
-		{'b', print_decTobin},
+		{'b', print_bin},
 		{0, NULL}
 	};
 
