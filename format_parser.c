@@ -39,7 +39,7 @@ int parseConversion(const char *format, va_list args)
 
 	print_map_t conv_array[] = {
 		{'c', print_char}, {'s', _print_str},
-		{'d', print_int2}, {'i', print_int2},
+		{'d', print_int}, {'i', print_int},
 		{'b', print_bin}, {'x', print_hex},
 		{'X', print_HEX}, {'o', print_oct},
 		{'u', print_unsignedInt}, {0, NULL}
