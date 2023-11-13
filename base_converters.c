@@ -16,6 +16,12 @@ int print_bin(va_list args)
 	
 	/* Set bitSize to the most significant bit (2^31 for a 32-bit integer) */
 	m = 2147483648;
+
+	/**
+	 * For example, the binary representation of 5 is 00000000000000000000000000000101
+	 * When printing the binary representation, it's common to skip leading zeros
+	 * to make the output more concise and readable
+	 */
 	/* Calculate the binary representation of the number and store it in array a */
 	bitRep[0] = n / m;
 	for (i = 1; i < 32; i++)
@@ -27,7 +33,11 @@ int print_bin(va_list args)
 	for (i = 0, sum = 0, count = 0; i < 32; i++)
 	{
 		sum += bitRep[i];
-		if (sum || i == 31)
+		/**
+		 * if sum is zero, it indicates that the
+		 * current digit is a leading zero and can be skipped
+		 */
+		if (sum != 0 || i == 31)
 		{
 			char z = '0' + bitRep[i];
 			/* Write the character to standard output */
