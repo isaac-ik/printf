@@ -48,44 +48,6 @@ int print_bin(va_list args)
 	return (count);
 }
 /**
- * print_decTobin - a function
- * Contributors: Isaac and Chee
- * Description: convert a decimal to binary
- * @args: argument list
- * Return: count
- */
-int print_decTobin(va_list args)
-{
-	int power, binNum, count, Tpower;
-	unsigned int number;
-	int remainder;
-	char *binStr;
-
-	binNum = 0;
-	number = va_arg(args, unsigned int);
-	power = indextoStart(number, 2) - 1;
-	Tpower = power;
-	count = 0;
-	/* the conversion */
-	while (number != 0)
-	{
-		remainder = number %  2;
-		binNum += remainder * expo(10, (Tpower - power));
-		number = number / 2;
-		power--;
-		count++;
-	}
-	/* allocate memory for it */
-	binStr = malloc(sizeof(char) * (count + 1));
-	if (binStr == NULL)
-		return (0);
-	/* convert to a string */
-	binStr = intTostr(binNum, binStr, count);
-	/*print the binary string */
-	_print_s(binStr);
-	return (count);
-}
-/**
  * indextoStart - a function
  * Contributors: Isaac and Chee
  * Description: get the number of divisions to use later

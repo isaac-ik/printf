@@ -25,7 +25,6 @@ int parseConversion(const char *format, va_list args);
 int expo(int num, int power);
 
 /* BASE CONVERTERS */
-int print_decTobin(va_list args);
 int print_bin(va_list args);
 int indextoStart(unsigned int number, int base);
 
