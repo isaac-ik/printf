@@ -15,6 +15,7 @@ int _putchar(char c);
 int print_int(va_list args);
 int print_int2(va_list args);
 int print_unsignedInt(va_list args);
+int print_pointer(va_list args);
 
 /* PRINTS STRING */
 int _print_str(va_list args);

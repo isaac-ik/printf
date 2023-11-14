@@ -42,7 +42,7 @@ int parseConversion(const char *format, va_list args)
 		{'d', print_int2}, {'i', print_int2},
 		{'b', print_bin}, {'x', print_hex},
 		{'X', print_HEX}, {'o', print_oct},
-		{'u', print_unsignedInt}, {'p', print_int2},
+		{'u', print_unsignedInt}, {'p', print_pointer},
 		{'S', handle_custom_S}, {0, NULL}
 	};
 
