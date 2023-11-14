@@ -68,12 +68,13 @@ int base_conv_16(int num, int acc)
 int _print_custom_s(char *str)
 {
 	int count = 0;
+	int i = 0;
 
-	while (str[count] != '\0')
+	while (str[i] != '\0')
 	{
-		if ((str[count] > 31) && (str[count] < 127))
+		if ((str[i] > 31) && (str[i] < 127))
 		{
-			_putchar(str[count]);
+			_putchar(str[i]);
 			count++;
 		}
 		else
@@ -81,8 +82,9 @@ int _print_custom_s(char *str)
 			_putchar('\\');
 			_putchar('x');
 			count += 2;
-			count += base_conv_16((int) str[count], 0);
+			count += base_conv_16((int) str[i], 0);
 		}
+		i++;
 	}
 
 	return (count);
