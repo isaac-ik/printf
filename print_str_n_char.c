@@ -40,12 +40,12 @@ int print_S(va_list args)
         /* if NULL or non-existing */
         if (str == NULL)
         {
-                count += _print_S(null_char);
+                count += _print_s(null_char);
                 return (count);
         }
 
         /* while iterating through: print each string letter and keep count */
-        count = _print_S(str);
+        count = _print_s(str);
         return (count);
 }
 

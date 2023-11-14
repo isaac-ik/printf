@@ -43,7 +43,7 @@ int parseConversion(const char *format, va_list args)
 		{'b', print_bin}, {'x', print_hex},
 		{'X', print_HEX}, {'o', print_oct},
 		{'u', print_unsignedInt}, {'p', print_int2},
-		{'S', print_S}, {0, NULL}
+		{'S', _print_str}, {0, NULL}
 	};
 
 	/*Loop through conv_array to find matching specificier */
