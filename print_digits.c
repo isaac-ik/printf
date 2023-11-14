@@ -41,7 +41,7 @@ int print_int2(va_list args)
 	if (str == NULL)
 		return (-1);
 	str = intTostr(number, str, count);
-	write(1, str, count);
+	count = write(1, str, count);
 	free(str);
 	return (count);
 }
