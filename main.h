@@ -18,6 +18,7 @@ int print_unsignedInt(va_list args);
 
 /* PRINTS STRING */
 int _print_str(va_list args);
+int handle_custom_S(va_list args);
 
 /* PRINTS CHAR */
 int print_char(va_list args);
@@ -31,6 +32,8 @@ int parseConversion(const char *format, va_list args);
 int expo(int num, int power);
 int base_con(int num, int base);
 int base_con16(int num, char t);
+int _print_custom_s(char *str);
+int base_conv_16(int num, int acc);
 
 /* BASE CONVERTERS */
 int print_bin(va_list args);

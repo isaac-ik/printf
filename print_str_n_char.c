@@ -25,31 +25,6 @@ int _print_str(va_list args)
 }
 
 /**
-  * print_S - Function name
-  * @args: varaidic list
-  * Return: Integar value
-  */
-int print_S(va_list args)
-{
-        int count = 0;
-        char *null_char = "(null)";
-
-        /* Accessing next argument as a char */
-        char *str = va_arg(args, char *);
-
-        /* if NULL or non-existing */
-        if (str == NULL)
-        {
-                count += _print_s(null_char);
-                return (count);
-        }
-
-        /* while iterating through: print each string letter and keep count */
-        count = _print_s(str);
-        return (count);
-}
-
-/**
   * print_char - Function name
   * @args: varadiac list
   * Return: Integar value
