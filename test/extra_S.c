@@ -10,11 +10,10 @@ int base_con16_S(char *str)
 {       
         int count;
 	char array[2];
-        char *symbols = "0123456789abcef";
+        char *symbols = "0123456789abcdef";
         char s;
 
 	array[0] = '0';
-	= {'7', 'f'}
         
         count = 0;
         /* if number is less than base */
@@ -25,9 +24,9 @@ int base_con16_S(char *str)
                  * and write it to standard output
                  */
 		if (num <= 9)
-			s[1] = symbols[num];
-                if (num > 9) 
-                       	s[i] = symbols[num] - 32;
+			array[1] = symbols[num];
+                if (num > 9 && num < 16) 
+                       	array[1] = symbols[num] - 32;
                 	_putchar(s);
 			count++;
 		}
