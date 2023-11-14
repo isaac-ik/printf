@@ -24,7 +24,7 @@ int main(void)
 	_printf("Negative:[%d]\n", 7);
 	printf("Negative:[%d]\n", 7);
 
-	_printf("positive:[%d]\n", 76253);
+	_printf("positive:[%d]\n", "76253");
 	printf("Positive:[%d]\n", "76253");
 
 	len1 = _printf("positive:[%d]\n", 040);

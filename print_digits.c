@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <unistd.h>
 /**
   * print_int - Function name
   * @args: Argument list
@@ -31,10 +32,17 @@ int print_int2(va_list args)
 {
 	int count = 0;/* Keep track of count */
 	int number;
+	char *str;
 
 	/* Accessing the next item as an int */
 	number = va_arg(args, int);
-	count = base_con(number, DEC);
+	count = lengthOfnum(number);
+	str = malloc(sizeof(char) * (count + 1));
+	if (str == NULL)
+		return (-1);
+	str = intTostr(number, str, count);
+	write(1, str, count);
+	free(str);
 	return (count);
 }
 /**
