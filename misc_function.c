@@ -10,7 +10,7 @@
 int base_con(int num, int base)
 {
 	int count;
-	char *symbols = "0123456789abcef";
+	char *symbols = "0123456789abcdef";
 
 	count = 0;
 	/* if number is less than base */
@@ -41,7 +41,7 @@ int base_con(int num, int base)
 int base_con16(int num, char t)
 {
 	int count;
-	char *symbols = "0123456789abcef";
+	char *symbols = "0123456789abcdef";
 	char s;
 
 	count = 0;
