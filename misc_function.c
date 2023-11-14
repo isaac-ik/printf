@@ -66,6 +66,7 @@ int base_con16(int num, char t)
 	}
 	return (count);
 }
+
 /**
  * indextoStart - a function
  * Contributors: Isaac and Chee

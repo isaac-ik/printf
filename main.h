@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 #define OCT 8
+#define BIN 2
 #define DEC 10
 #define UPPER 'u'
 #define LOWER 'l'
@@ -34,6 +35,8 @@ int base_con(int num, int base);
 int base_con16(int num, char t);
 int _print_custom_s(char *str);
 int base_conv_16(int num, int acc);
+int base_con16_shrt(int num, char t);
+int base_con_shrt(int num, int base);
 
 /* BASE CONVERTERS */
 int print_bin(va_list args);
@@ -41,6 +44,7 @@ int print_oct(va_list args);
 int print_hex(va_list args);
 int print_HEX(va_list args);
 int indextoStart(unsigned int number, int base);
+int print_bin2(va_list args);
 
 /**
  * struct print_map - a structure

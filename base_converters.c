@@ -47,6 +47,23 @@ int print_bin(va_list args)
 	/* Return the number of characters written */
 	return (count);
 }
+
+/**
+ * print_bin2 - a function
+ * Contributors: Isaac and Chee
+ * Description: convert a decimal to binary
+ * @args: argument list
+ * Return: count
+ */
+int print_bin2(va_list args)
+{
+	int count;
+	unsigned int numb;
+
+	numb = va_arg(args, unsigned int);
+	count = base_con_shrt(numb, BIN);
+	return (count);
+}
 /**
  * print_oct - a function
  * Contributors: Isaac and Chee
@@ -60,7 +77,7 @@ int print_oct(va_list args)
 	unsigned int numb;
 
 	numb = va_arg(args, unsigned int);
-	count = base_con(numb, OCT);
+	count = base_con_shrt(numb, OCT);
 	return (count);
 }
 /**
@@ -76,7 +93,7 @@ int print_hex(va_list args)
 	unsigned int numb;
 
 	numb = va_arg(args, unsigned int);
-	count = base_con16(numb, LOWER);
+	count = base_con16_shrt(numb, LOWER);
 	return (count);
 }
 /**
@@ -92,6 +109,6 @@ int print_HEX(va_list args)
 	unsigned int numb;
 
 	numb = va_arg(args, unsigned int);
-	count = base_con16(numb, UPPER);
+	count = base_con16_shrt(numb, UPPER);
 	return (count);
 }
